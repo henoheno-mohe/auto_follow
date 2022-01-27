@@ -1,15 +1,22 @@
 import sys
 sys.path.append('../')
-import config
+#import config
 import tweepy
 import time
 
+
+CK="TCR0L0CCEB1hbWsS4vS3QIJ3j"
+CS="v8xTuXPfBFL08Ewz5Vu7TUswOsWGbn9MxmvOB5jsIhdoaw2QgE"
+AT="1475721163594952706-L32d3fIGVjowIRuD7FfAsQ9r86u0xr"
+AS="MvrgGFE5Y4hFCQ8ZXi64yzOv3xFWJMKvCTcvfp5clNIHq"
+BT="AAAAAAAAAAAAAAAAAAAAABgCXgEAAAAA1SOlCtGKnVAZhRSUcKgumYYEO2o%3DbL6s4upYmaPe756MuCq6toxlqgwsvwcR41ZK92rNQoLgMChtNa"
+
 # API KEY
-CK = config.CK
-CS = config.CS
-AT = config.AT
-AS = config.AS
-BT = config.BT
+#CK = config.CK
+#CS = config.CS
+#AT = config.AT
+#AS = config.AS
+#BT = config.BT
 
 #tweepyの設定
 client = tweepy.Client(BT, CK, CS, AT, AS)
