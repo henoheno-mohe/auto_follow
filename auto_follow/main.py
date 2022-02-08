@@ -39,7 +39,16 @@ follow_lists = []
 for follow in follow_list[0]:
     follow_lists.append(follow.id)
 
+# 現在のブロックリストを作成
+block_list = client.get_blocked(max_results=100)
+block_lists = []
 
+for block in block_list[0]:
+    block_lists.append(block.id)
+
+print(block_lists)
+
+follow_block_list = follow_lists + block_lists
 
 s_count = 20
 results = client.search_recent_tweets(query=keyword, max_results=s_count, user_fields = "name", expansions=["author_id","referenced_tweets.id"],)
@@ -51,8 +60,9 @@ for result in results.data:
 
 for result in results.data: 
     client.retweet(result.id)
-    if result.author_id not in follow_lists:
+    if result.author_id not in follow_block_list:
         client.follow_user(result.author_id)
         print(result.author_id)
         time.sleep(30)
         
+
