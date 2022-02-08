@@ -41,7 +41,7 @@ for follow in follow_list[0]:
 
 
 
-s_count = 15
+s_count = 20
 results = client.search_recent_tweets(query=keyword, max_results=s_count, user_fields = "name", expansions=["author_id","referenced_tweets.id"],)
 
 for result in results.data: 
@@ -54,5 +54,5 @@ for result in results.data:
     if result.author_id not in follow_lists:
         client.follow_user(result.author_id)
         print(result.author_id)
-        time.sleep(90)
+        time.sleep(30)
         
