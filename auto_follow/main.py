@@ -50,7 +50,7 @@ print(block_lists)
 
 follow_block_list = follow_lists + block_lists
 
-s_count = 20
+s_count = 40
 results = client.search_recent_tweets(query=keyword, max_results=s_count, user_fields = "name", expansions=["author_id","referenced_tweets.id"],)
 
 for result in results.data: 
